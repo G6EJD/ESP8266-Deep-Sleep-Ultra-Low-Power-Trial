@@ -55,8 +55,8 @@ void setup() {
   float temperature = 20.1;   //bme.readTemperature();
   float humidity    = 65;     //bme.readHumidity();
   float pressure    = 1010.5; //bme.readPressure()/100.0F + pressure_offset;
-  float voltage = analogRead(A0) *820/(820+270); // scaled 0-1023 for 0 to 1 volt input
-  UpdateThingSpeak("field1="+String(temperature)+"&field2="+String(humidity)+"&field3="+String(pressure)); // Send the data as text
+  float voltage = analogRead(A0)*3.3/1024/(820/(820+270)); // scaled 0-1023 for 0 to 1 volt input
+  UpdateThingSpeak("field1="+String(temperature)+"&field2="+String(humidity)+"&field3="+String(pressure)+"&field4="+String(voltage)); // Send the data as text
   Serial.println("Going to sleep");
   ESP.deepSleep(UpdateThingSpeakInterval, WAKE_RF_DEFAULT); // Sleep for the time set by 'UpdateThingSpeakInterval'
 }
