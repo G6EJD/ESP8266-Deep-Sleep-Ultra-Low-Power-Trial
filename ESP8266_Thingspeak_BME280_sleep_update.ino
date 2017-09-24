@@ -30,7 +30,7 @@ String       writeAPIKey = "your_TS_API_write_key_here";   // Get the key for yo
 const int UpdateThingSpeakInterval = 10 * 60 * 1000000;      // e.g. 15 * 60 * 1000000; for a 15-Min update interval (15-mins x 60-secs * 1000000uS)
 #define pressure_offset 3.3 // Adjusts BME280 pressure value for my location at 40M asl
 #define sda 4
-#define scl 4
+#define scl 5
 
 WiFiServer server(80);
 Adafruit_BME280 bme;
